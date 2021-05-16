@@ -9,6 +9,18 @@ export class LoginComponent implements OnInit {
 
   username="";
   password="";
+  
+  countries = ["India","U.K","U.S.A"];
+
+  cities = {
+    "India":["Hyderabad","Pune","Mumbai"],
+    "UK":["London","Manchester","Liverpool"],
+    "USA":["Los Angeles","New York","Chicago"]
+  }
+
+  countrySelected="India";
+  citySelected="";
+
 
   constructor() { }
 

@@ -8,8 +8,35 @@
         <label class="text-white">Password:</label>
         <input [(ngModel)]="password" type="password" style="font-size:1.5rem;" name="password" >
         <br/><br/><br/>
+        <label class="text-white">Country:</label>
+        <select  name="countries" id="countries"  style="font-size: 1.5rem;" [(ngModel)]="countrySelected">
+                <option *ngFor="let country of countries" [value]="country" >{{country}}</option>
+        </select>
+        <br/><br/><br/>
+
+        <label class="text-white">City</label>
+        <select id="cities" name="cities" [ngSwitch]="countrySelected" style="font-size: 1.5rem;">
+                
+                        <ng-template [ngSwitchCase]="'India'">
+                                <option *ngFor="let city of cities.India" value="city">{{city}}</option>
+
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'U.K'">
+                                <option *ngFor="let city of cities.UK" value="city">{{city}}</option>
+
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'U.S.A'">
+                                <option *ngFor="let city of cities.USA" value="city">{{city}}</option>
+
+                        </ng-template>
+                
+        </select>
+        
+        <br/><br/><br/>
         <input type="submit" value="Submit" style="font-size: 1.75rem;" (click)="onSubmit()">
         <br/>
+
+       
        
         
 </form>
