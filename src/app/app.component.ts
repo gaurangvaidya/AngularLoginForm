@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-example';
+
+  handleParentEvent(event:any)
+  {
+
+    alert("This Is Parent "+JSON.stringify(event));
+
+    event.fullName = event.firstName + ' ' + event.lastName;
+    
+    
+
+
+
+
+  }
 }
